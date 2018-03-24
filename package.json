@@ -14,5 +14,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This starter project has everything you need to start writing React as fast as possible.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sparky-Blue/playlist-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sparky-Blue/playlist-app/issues"
+  },
+  "homepage": "https://github.com/Sparky-Blue/playlist-app#readme"
 }
