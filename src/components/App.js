@@ -68,6 +68,9 @@ class SongAdder extends React.Component {
         <label htmlFor="name">Song name</label>
         <input
           id="name"
+          ref={input => {
+            this.name = input;
+          }}
           type="text"
           value={this.state.newSong.name}
           onKeyUp={this.changeBox}
@@ -124,7 +127,7 @@ class SongAdder extends React.Component {
     }
   };
 
-  handleClick = () => {
+  handleClick = event => {
     this.props.addSong(this.state.newSong);
     this.setState({
       newSong: {
@@ -133,6 +136,7 @@ class SongAdder extends React.Component {
         addedBy: ""
       }
     });
+    this.name.focus();
   };
 }
 
@@ -141,8 +145,12 @@ function Playlist({ playlist }) {
     <nav id="playlist">
       <p>Recently added...</p>
       <table>
-        <th>Song name</th>
-        <th>Artist</th>
+        <thead>
+          <tr>
+            <th>Song name</th>
+            <th>Artist</th>
+          </tr>
+        </thead>
         {playlist
           .map((songInfo, i) => {
             return <Song songInfo={songInfo} key={i} />;
@@ -155,10 +163,12 @@ function Playlist({ playlist }) {
 
 function Song({ songInfo }) {
   return (
-    <tr>
-      <td>{songInfo.name}</td>
-      <td>{songInfo.artist}</td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>{songInfo.name}</td>
+        <td>{songInfo.artist}</td>
+      </tr>
+    </tbody>
   );
 }
 

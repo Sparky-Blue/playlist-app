@@ -19,6 +19,19 @@ body {
   justify-items: center;
 }
 
+@media screen and (max-width: 850px) {
+  #wrapper {
+    height: auto;
+    grid-auto-columns: 100%;
+    grid-template-areas:
+      "s"
+      "a"
+      "b"
+      "c"
+      "f";
+  }
+}
+
 header {
   grid-area: s;
   height: 100px;
@@ -72,4 +85,19 @@ button {
   margin: 10px;
   text-align: center;
   align-self: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  width: 50%;
 }
